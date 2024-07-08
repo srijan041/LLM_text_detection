@@ -1,0 +1,4 @@
+models/explicitly_saved_model.weights.h5
+frontend/.vscode
+api/__pycache__
+venv

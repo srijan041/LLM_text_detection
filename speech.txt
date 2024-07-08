@@ -1,0 +1,33 @@
+Methods and Materials:
+
+Slide 1--------
+In this project we have opted to use the BERT model (which is a Bidirectional Encoder Representations from Transformers model). BERT is a cutting-edge natural language processing transformer model which was developed by Google.
+
+What sets BERT apart from the other models is its two-way nature. Unlike
+previous models that only process text in one direction (that is either from left to right or from right to left), BERT is designed to understand the context of a word based on the words before and after it. This kind of two-dimensional contextual representation allows BERT to generate more accurate contextual embeddings for words. Making it more accurate and provinding better performance.
+End of Slide 1--------
+
+Slide 2--------
+Now I am going to talk about the Datasets and how they were preprared. In this project we have used 4 major datasets that are all publicly available and were used to fine tune the BERT model. The final dataset comprises of 50% human written texts and 50% LLM generated texts. For the LLM generated texts that were aquired, multiple datasets were used that were created using various different LLM models, like the Falcon 180B, the Llama 70B, PaLM from Google Gen AI which is a 540B parameter transformer, and finally ChatGPT.
+
+The data that was compiled from these datasets were all then run through the pre-processing pipeline. The first step of pre-processing was removing all the Stop words like "so", "he", "like" and etc. This helps remove distracting noise from the data that can skew the results unfavourably. Then data was tokenized and all the words were converted to their base representation for example, ran and running are all modification of the base word run. Finally the punctuations are removed. This is done to achieve a higher level of precision and consistency in the model.
+End of Slide 2--------
+
+Slide 3--------
+Finally we Fine tuned the BERT model using the data we aquired. This step includes :
+
+Model Building:
+The pre-trained BERT model is used from Tensorflow which can be directly imported into the project and can be used for the model building process.
+
+Regularization:
+A drop out layer is incorporated to mitigate overfitting.
+
+Dense layer:
+A dense layer with one output is appended for binary classification.
+
+Compilation:
+The model is compiled with Adam as the optimizer. Other alternatives like RMSE were also considered. Binary Crossentropy has been utilized as the loss function.
+
+Fitting:
+The batch is set to 8 and the number of epochs is set to 1 due to BERTs efficient architecture.
+End of Slide 3--------
